@@ -1,4 +1,3 @@
-# session-hijacking-prevention
 # Session Hijacking Prevention System
 
 ## **Project Overview**
