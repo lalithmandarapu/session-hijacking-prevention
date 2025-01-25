@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Session Security System</h1>
+    <p>Secure your sessions with advanced techniques!</p>
+    <div class="buttons">
+      <button id="get-started-btn">Get Started</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById("get-started-btn").addEventListener("click", async () => {
+      const response = await fetch("http://localhost:5000/auth/protected", {
+        credentials: "include",
+      });
+      
+      // Redirect to appropriate page based on authentication
+      if (response.ok) {
+        window.location.href = "dashboard.html";
+      } else {
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+</body>
+</html>
